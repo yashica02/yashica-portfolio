@@ -1,0 +1,55 @@
+{
+  "intro": "Hello! I'm Yashica, a passionate full-stack developer fascinated by the galaxy and space tech.",
+  "about": "I am a graduate student in Computer Science with a love for immersive tech and web development.",
+  "skills": {
+    "Frontend": ["React", "JavaScript", "CSS"],
+    "Backend": ["Node.js", "Python", "FastAPI"]
+  },
+  "experience": [
+    {
+      "title": "Software Developer Intern",
+      "company": "Innovative Space Tech",
+      "duration": "June 2025 - Present",
+      "description": "Developed intuitive web applications with cutting-edge space simulation features."
+    }
+  ],
+  "projects": [
+    {
+      "name": "Galaxy Explorer",
+      "description": "An interactive galaxy visualization app with real-time star data.",
+      "link": "https://github.com/username/galaxy-explorer"
+    }
+  ],
+  "education": [
+    {
+      "degree": "M.S. in Computer Science",
+      "institution": "Space Tech University",
+      "period": "2024 - 2026"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Certified React Developer",
+      "issuer": "React Training",
+      "year": 2025
+    }
+  ],
+  "extraCurricular": "Member of Astronomy Club, Space Hackathons participant.",
+  "stats": {
+    "techGrowth": [
+      {"year": "2023", "skillLevel": 60},
+      {"year": "2024", "skillLevel": 75},
+      {"year": "2025", "skillLevel": 90}
+    ]
+  },
+  "contact": {
+    "email": "yashica@example.com",
+    "phone": "+1 234 567 890",
+    "socials": {
+      "LinkedIn": "https://linkedin.com/in/yashica",
+      "GitHub": "https://github.com/yashica"
+    }
+  },
+  "footer": "© 2025 Yashica Portfolio. All rights reserved.",
+  "themes": ["Galaxy", "Y2K", "Gamer", "Classroom", "MythicalGarden"]
+}
