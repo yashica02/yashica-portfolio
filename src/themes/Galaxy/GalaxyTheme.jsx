@@ -1,7 +1,5 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import Particles from 'react-tsparticles';
-import { loadStarsPreset } from 'tsparticles-preset-stars';
 import data from '../../data.json';
 import './styles.css';
 
@@ -17,21 +15,27 @@ import planet6Img from './assets/planet6.png';
 import planet7Img from './assets/planet7.png';
 import planet8Img from './assets/planet8.png';
 
-// Floating astronaut animation
+// Add nebula image import
+import nebulaBg from './assets/4574053-science-fiction-space-nebula-artwork.jpg';
+
+// (Optional) Twinkling particles: keep if you want animated sparkles on top of your image
+import Particles from 'react-tsparticles';
+import { loadStarsPreset } from 'tsparticles-preset-stars';
+
 const floatingAnimation = {
   y: [0, -15, 0],
   transition: { duration: 6, repeat: Infinity, ease: 'easeInOut' },
 };
 
-// Modal fade/scale variants
 const modalVariants = {
   hidden: { opacity: 0, scale: 0.85 },
   visible: { opacity: 1, scale: 1, transition: { duration: 0.4 } },
   exit: { opacity: 0, scale: 0.85, transition: { duration: 0.3 } },
 };
 
+// Optional: Twinkling particle layer for subtle sparkle on top of the background image
 function StarfieldBackground() {
-  const particlesInit = useCallback(async (engine) => {
+  const particlesInit = React.useCallback(async (engine) => {
     await loadStarsPreset(engine);
   }, []);
 
@@ -41,93 +45,30 @@ function StarfieldBackground() {
       init={particlesInit}
       options={{
         preset: 'stars',
-        background: {
-          color: {
-            value: "#0b0d17", // Match galaxy background color
-          },
-        },
-        fullScreen: {
-          enable: true,
-          zIndex: 0,
-        },
+        background: { color: { value: "transparent" } },
+        fullScreen: { enable: true, zIndex: 1 }, // zIndex 1 so it’s above the nebula image but below all interactive UI
         particles: {
-          number: {
-            value: 120,
-            density: {
-              enable: true,
-              area: 800,
-            },
-          },
-          color: { value: "#bfcfff" },
+          number: { value: 28, density: { enable: true, area: 900 }},
+          color: { value: "#e7e6ff" },
           opacity: {
-            value: 0.5,
-            random: { enable: true, minimumValue: 0.1 },
-            animation: {
-              enable: true,
-              speed: 0.5,
-              minimumValue: 0.1,
-              sync: false,
-            },
+            value: 0.6,
+            random: { enable: true, minimumValue: 0.2 },
+            animation: { enable: true, speed: 0.6, minimumValue: 0.1, sync: false },
           },
           size: {
-            value: 2,
-            random: { enable: true, minimumValue: 0.5 },
+            value: 1.8,
+            random: { enable: true, minimumValue: 0.7 }
           },
-          move: {
-            enable: false,
-          },
+          move: { enable: false },
           twinkle: {
             particles: {
               enable: true,
-              frequency: 0.02,
+              frequency: 0.11,
               opacity: 1,
             },
-            lines: {
-              enable: false,
-            },
+            lines: { enable: false },
           },
-        },
-        interactivity: {
-          detectsOn: "canvas",
-          events: {
-            onHover: { enable: false },
-            onClick: { enable: false },
-          },
-        },
-        emitters: [
-          {
-            direction: "top-right",
-            spawnColor: {
-              value: "#ffffff",
-              animation: { enable: true, speed: 400, sync: true },
-            },
-            rate: { quantity: 1, delay: 7 },
-            size: { width: 0, height: 0 },
-            life: { count: 1, duration: 2, delay: 3 },
-            position: { x: 0, y: 100 },
-            particles: {
-              shape: "line",
-              size: {
-                value: 150,
-                animation: {
-                  enable: true,
-                  speed: 220,
-                  minimumValue: 50,
-                  sync: true,
-                  startValue: "max",
-                  destroy: "min",
-                },
-              },
-              move: {
-                direction: "top-right",
-                speed: 400,
-                straight: true,
-                outModes: { default: "destroy" },
-              },
-              trail: { enable: true, length: 60, fillColor: "#0b0d17" },
-            },
-          },
-        ],
+        }
       }}
     />
   );
@@ -204,7 +145,6 @@ function Planet({ planetData, onClick }) {
         transition={{ repeat: Infinity, duration: planetData.rotationDuration || 60, ease: 'linear' }}
       />
       <div className="planet-label">{planetData.label}</div>
-
       {hovered && (
         <>
           <div className="planet-glow" />
@@ -212,7 +152,10 @@ function Planet({ planetData, onClick }) {
             <motion.div
               key={i}
               className="satellite-sparkle"
-              style={{ transform: `rotate(${s.angle}deg) translateX(40px) rotate(-${s.angle}deg)`, animationDelay: `${s.delay}s` }}
+              style={{
+                transform: `rotate(${s.angle}deg) translateX(40px) rotate(-${s.angle}deg)`,
+                animationDelay: `${s.delay}s`
+              }}
             />
           ))}
         </>
@@ -223,7 +166,6 @@ function Planet({ planetData, onClick }) {
 
 function Astronaut({ introContent, onContactClick }) {
   const [dialogVisible, setDialogVisible] = useState(false);
-
   return (
     <div
       className="astronaut-container"
@@ -240,7 +182,6 @@ function Astronaut({ introContent, onContactClick }) {
         onFocus={() => setDialogVisible(true)}
         onBlur={() => setDialogVisible(false)}
       />
-
       <AnimatePresence>
         {dialogVisible && (
           <motion.div className="intro-dialog" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }}>
@@ -248,7 +189,6 @@ function Astronaut({ introContent, onContactClick }) {
           </motion.div>
         )}
       </AnimatePresence>
-
       <motion.img
         src={spaceshipImg}
         alt="Spaceship - click to contact"
@@ -325,25 +265,18 @@ export default function GalaxyTheme() {
     setModalSection(null);
   };
 
-  // Modal content from data.json
   const modalContent = () => {
     if (!modalSection) return null;
     if (modalSection === 'contact') {
       const contact = data.contact;
       return (
         <div className="contact-content">
-          <p>
-            Email: <a href={`mailto:${contact.email}`}>{contact.email}</a>
-          </p>
+          <p>Email: <a href={`mailto:${contact.email}`}>{contact.email}</a></p>
           <p>Phone: {contact.phone}</p>
           <p>Socials:</p>
           <ul>
             {Object.entries(contact.socials).map(([key, link]) => (
-              <li key={key}>
-                <a href={link} target="_blank" rel="noreferrer">
-                  {key}
-                </a>
-              </li>
+              <li key={key}><a href={link} target="_blank" rel="noreferrer">{key}</a></li>
             ))}
           </ul>
         </div>
@@ -351,16 +284,14 @@ export default function GalaxyTheme() {
     }
     const content = data[modalSection];
     if (!content) return <p>No content available.</p>;
-
     if (modalSection === 'skills') {
       return Object.entries(content).map(([cat, skills]) => (
         <div key={cat}>
           <h3>{cat}</h3>
-          <ul>{skills.map((s, i) => (<li key={i}>{s}</li>))}</ul>
+          <ul className="skills-list">{skills.map((s, i) => (<li key={i}>{s}</li>))}</ul>
         </div>
       ));
     }
-
     if (Array.isArray(content)) {
       return content.map((item, i) => (
         <div key={i} className="modal-item">
@@ -377,9 +308,7 @@ export default function GalaxyTheme() {
         </div>
       ));
     }
-
     if (typeof content === 'string') return <p>{content}</p>;
-
     if (modalSection === 'stats') {
       const stats = content.techGrowth;
       return (
@@ -395,7 +324,6 @@ export default function GalaxyTheme() {
         </div>
       );
     }
-
     return <p>Content not formatted yet.</p>;
   };
 
@@ -412,9 +340,14 @@ export default function GalaxyTheme() {
 
   return (
     <div className="galaxy-theme-container">
-      {/* Starfield Background */}
+      {/* Nebula/star background image */}
+      <div className="nebula-bg-layer">
+        <img src={nebulaBg} alt="Nebula starfield" />
+      </div>
+
       <StarfieldBackground />
 
+      {/* UI Content */}
       <ThemeSwitcher currentTheme={currentTheme} themes={data.themes} onThemeSelect={onThemeSelect} />
       <Astronaut introContent={data.intro} onContactClick={() => openModalForSection('contact')} />
       {planets.map((planet) => (

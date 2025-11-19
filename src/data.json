@@ -1,37 +1,96 @@
 {
   "intro": "Hello! I'm Yashica, a passionate full-stack developer fascinated by the galaxy and space tech.",
-  "about": "I am a graduate student in Computer Science with a love for immersive tech and web development.",
+  "about": "Innovative software engineer (M.S. ITM, Illinois Tech) specializing in C++, Python, and scalable backend architectures for simulation, AI-driven data automation, and real-time analytics. Proven ability in optimizing asynchronous pipelines, integrating large language models, and designing sensor and synthetic data simulations. Effective collaborator with experience driving feature ownership, writing detailed documentation, and iterating products based on user and stakeholder feedback.",
   "skills": {
     "Frontend": ["React", "JavaScript", "CSS"],
-    "Backend": ["Node.js", "Python", "FastAPI"]
+    "Backend": ["Node.js", "Python", "FastAPI"],
+    "Programming": ["C++", "Python", "Java", "JavaScript", "React", "FastAPI", "Django", "SQL", "PHP", "HTML", "CSS"],
+    "Tools & Frameworks": ["Firebase", "Jakarta EE", "WordPress", "Git", "Docker", "Scrapy", "Jikan API", "CI/CD pipelines"],
+    "Databases & APIs": ["MySQL", "Firebase Realtime DB", "REST APIs", "Google Gemini LLM", "LLM/ML pipeline architecture"],
+    "Core": ["Simulation design", "sensor data processing", "async backend systems", "ML model integration", "data pipeline optimization", "automated testing", "cross-team collaboration", "documentation"]
   },
   "experience": [
     {
-      "title": "Software Developer Intern",
-      "company": "Innovative Space Tech",
-      "duration": "June 2025 - Present",
-      "description": "Developed intuitive web applications with cutting-edge space simulation features."
+      "title": "Full Stack Engineering Intern",
+      "company": "Kingship AI (Startup), San Francisco, CA (Remote)",
+      "duration": "Sept 2025 - Present",
+      "description": "Engineered Python FastAPI microservices integrated with Google Gemini LLM APIs to automate structured data reasoning and validation, improving data quality and cutting response latency by 30%. Designed and optimized React frontend features focused on real-time analytics visualization and user interaction; enhanced asynchronous data flows resulting in a 25% improved rendering performance. Led documentation and cross-functional code reviews, ensuring strict adherence to CI/CD pipelines that supported over 99% deployment reliability and speeding up team knowledge transfer. Collaborated remotely with engineering teams, conducting design discussions and contributing to architectural decisions focused on scalable synthetic data pipelines."
+    },
+    {
+      "title": "Python Backend Developer Intern",
+      "company": "Ful Inc (Startup), Bangalore, India",
+      "duration": "March 2023 - August 2023",
+      "description": "Engineered Python FastAPI microservices integrated with Google Gemini LLM APIs to automate structured data reasoning and validation, improving data quality and cutting response latency by 30%. Designed and optimized React frontend features focused on real-time analytics visualization and user interaction; enhanced asynchronous data flows resulting in a 25% improved rendering performance. Led documentation and cross-functional code reviews, ensuring strict adherence to CI/CD pipelines that supported over 99% deployment reliability and speeding up team knowledge transfer. Collaborated remotely with engineering teams, conducting design discussions and contributing to architectural decisions focused on scalable synthetic data pipelines."
+    },
+    {
+      "title": "Data Engineer Intern",
+      "company": "Future Infotech, Jaipur, India",
+      "duration": "Jan 2022 - Feb 2022",
+      "description": "Created automated, fault-tolerant data transformation and validation pipelines using Python and SQL, slashing reporting times by 75% while enhancing dataset accuracy and consistency. Developed visual analytics reporting tools enabling executives to make faster, more informed decisions with dynamic data visualization integrated into automated dashboards. Identified systemic data issues and implemented recovery and fault-handling protocols, increasing pipeline robustness and reducing downstream errors."
+    },
+    {
+      "title": "Founder & Product Designer",
+      "company": "Starophia Sole (Handmade Resin Art Business), India",
+      "duration": "June 2021 - Sept 2021",
+      "description": "Launched and scaled resin art business, producing and marketing 40+ unique products via Instagram and social platforms, achieving high customer engagement and repeat sales. Created a Java-based pricing automation app (NetBeans) to calculate optimal profit margins exceeding 50%, improving financial forecasting and operational efficiency. Continuously iterated products and packaging informed by direct buyer feedback, boosting customer satisfaction and managing supply logistics for pop-up events."
     }
   ],
   "projects": [
     {
-      "name": "Galaxy Explorer",
-      "description": "An interactive galaxy visualization app with real-time star data.",
-      "link": "https://github.com/username/galaxy-explorer"
+      "name": "Anime Tracker App",
+      "description": "Built a multi-platform anime tracking application using React frontend and Kotlin/Android client, supporting over 50 concurrent users with zero synchronization lag via Firebase Realtime Database. Implemented unit and integration tests for asynchronous API calls and data cache consistency, improving response accuracy by 20%. Incorporated offline caching to minimize redundant API requests, optimizing app performance and reducing server load by 45%. Led iterative UI/UX improvements based on real user feedback, backed by documentation of change logs and testing procedures.",
+      "link": null
+    },
+    {
+      "name": "SafegArt - Sensor Prototype",
+      "description": "Designed and implemented C++ ultrasonic sensor software to measure object distance with ±3 cm accuracy, emulating autonomous vehicle proximity detection. Logged and analyzed signal data in structured CSV format to validate sensor precision across multiple physical tests. Developed test harnesses including sensor noise simulation and failure scenarios to ensure system robustness and reliability. Authored detailed technical documentation covering sensor integration, test methodologies, and usage guidelines to support team knowledge transfer.",
+      "link": null
+    },
+    {
+      "name": "Loan Analysis System",
+      "description": "Engineered a JavaFX application for batch processing 500+ financial records, reducing loan eligibility computation time by 40% through optimized SQL query design and indexed tables. Modularized backend logic under MVC framework to ensure maintainability and scalability for future data simulation expansions. Created JUnit test suites covering 90% of business logic, increasing code reliability and facilitating regression testing. Documented system architecture and testing strategies for developer onboarding and future enhancements.",
+      "link": null
+    },
+    {
+      "name": "Insurance Management System",
+      "description": "Developed a secure, role-based insurance dashboard featuring PBKDF2 session encryption for safe user authentication. Simulated claim approval workflows, improving UI load time by 25% and increasing error resilience through modular, test-driven component design. Authored automated test scripts for authentication and business logic, ensuring system stability and seamless regression testing. Maintained comprehensive documentation of APIs, security protocols, and test cases to streamline team collaboration.",
+      "link": null
+    },
+    {
+      "name": "Mooney Manager",
+      "description": "Collaborated as part of a 4-member team to design, develop, and manage a real-time, multi-user finance management platform with Firebase backend. Managed project timelines, coordinated team tasks, and ensured consistent communication between frontend (React/PHP) and backend modules. Developed automated UI validation and backend endpoint testing suites to ensure robust functionality across different user scenarios. Documented application architecture, APIs, and testing outcomes to facilitate ongoing integration and smooth developer handoffs.",
+      "link": null
     }
   ],
   "education": [
     {
-      "degree": "M.S. in Computer Science",
-      "institution": "Space Tech University",
-      "period": "2024 - 2026"
+      "degree": "M.S. in Information Technology and Management",
+      "institution": "Illinois Institute of Technology, Chicago, IL",
+      "period": "August 2024 - May 2026",
+      "GPA": "3.6"
+    },
+    {
+      "degree": "Bachelor of Computer Applications (BCA)",
+      "institution": "Symbiosis Institute of Computer Studies and Research, Pune, India",
+      "period": "September 2020 - July 2023",
+      "CGPA": "7.95"
     }
   ],
   "certifications": [
     {
-      "name": "Certified React Developer",
-      "issuer": "React Training",
-      "year": 2025
+      "name": "Python and Cyber Security",
+      "issuer": "DSC, BIT Mesra",
+      "year": null
+    },
+    {
+      "name": "Cyber Security",
+      "issuer": "ShapeAI",
+      "year": null
+    },
+    {
+      "name": "Certified C++ Developer",
+      "issuer": " Tarun Computer Systems",
+      "year": 2020
     }
   ],
   "extraCurricular": "Head of Social Mead Team of Indian Student Association @Illinois Tech, Resin Small Business Sole Owner.",
@@ -46,7 +105,7 @@
     "email": "yashica2409@gmail.com",
     "phone": "+1 (312)929-7125",
     "socials": {
-      "LinkedIn": "https://linkedin.com/in/yashica sharma02",
+      "LinkedIn": "https://linkedin.com/in/yashica-sharma02",
       "GitHub": "https://github.com/yashica02"
     }
   },
