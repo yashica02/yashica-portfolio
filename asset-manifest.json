@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/yashica-portfolio/static/css/main.b2ddeae0.css",
+    "main.js": "/yashica-portfolio/static/js/main.bd542dd8.js",
+    "static/media/planet5.png": "/yashica-portfolio/static/media/planet5.01c4b7d910e66a3101b9.png",
+    "static/media/planet6.png": "/yashica-portfolio/static/media/planet6.de721c4e4ab4a78910a7.png",
+    "static/media/planet7.png": "/yashica-portfolio/static/media/planet7.0d613f9cfcf3c003bf4b.png",
+    "static/media/planet4.png": "/yashica-portfolio/static/media/planet4.995ae4af81c40870c5de.png",
+    "static/media/planet3.png": "/yashica-portfolio/static/media/planet3.f015e468aa256d9013fc.png",
+    "static/media/planet2.png": "/yashica-portfolio/static/media/planet2.6dbdaca1e11063c41eb3.png",
+    "static/media/planet1.png": "/yashica-portfolio/static/media/planet1.cf190f073095a2e429c3.png",
+    "static/media/spaceship.png": "/yashica-portfolio/static/media/spaceship.9f69697504cdf199b4d8.png",
+    "static/media/astronaut.png": "/yashica-portfolio/static/media/astronaut.42a84c97190572664f6c.png",
+    "static/media/planet8.png": "/yashica-portfolio/static/media/planet8.76f0a4e22ebc0ea33a4e.png",
+    "static/media/4574053-science-fiction-space-nebula-artwork.jpg": "/yashica-portfolio/static/media/4574053-science-fiction-space-nebula-artwork.eac30b63d9cf930c398d.jpg",
+    "index.html": "/yashica-portfolio/index.html",
+    "main.b2ddeae0.css.map": "/yashica-portfolio/static/css/main.b2ddeae0.css.map",
+    "main.bd542dd8.js.map": "/yashica-portfolio/static/js/main.bd542dd8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b2ddeae0.css",
+    "static/js/main.bd542dd8.js"
+  ]
+}
