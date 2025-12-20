@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import data from '../../data.json';
 import './styles.css';
@@ -18,10 +18,11 @@ import planet8Img from './assets/planet8.png';
 // Add nebula image import
 import nebulaBg from './assets/4574053-science-fiction-space-nebula-artwork.jpg';
 
-// (Optional) Twinkling particles: keep if you want animated sparkles on top of your image
+// Optional: Twinkling sparkle layer with tsparticles
 import Particles from 'react-tsparticles';
 import { loadStarsPreset } from 'tsparticles-preset-stars';
 
+// Floating astronaut animation
 const floatingAnimation = {
   y: [0, -15, 0],
   transition: { duration: 6, repeat: Infinity, ease: 'easeInOut' },
@@ -33,9 +34,9 @@ const modalVariants = {
   exit: { opacity: 0, scale: 0.85, transition: { duration: 0.3 } },
 };
 
-// Optional: Twinkling particle layer for subtle sparkle on top of the background image
+// Subtle star sparkle effect
 function StarfieldBackground() {
-  const particlesInit = React.useCallback(async (engine) => {
+  const particlesInit = useCallback(async (engine) => {
     await loadStarsPreset(engine);
   }, []);
 
@@ -46,7 +47,7 @@ function StarfieldBackground() {
       options={{
         preset: 'stars',
         background: { color: { value: "transparent" } },
-        fullScreen: { enable: true, zIndex: 1 }, // zIndex 1 so it’s above the nebula image but below all interactive UI
+        fullScreen: { enable: true, zIndex: 1 },
         particles: {
           number: { value: 28, density: { enable: true, area: 900 }},
           color: { value: "#e7e6ff" },
@@ -75,7 +76,7 @@ function StarfieldBackground() {
 }
 
 function Modal({ isOpen, onClose, title, content }) {
-  React.useEffect(() => {
+  useEffect(() => {
     if (isOpen) document.body.style.overflow = 'hidden';
     else document.body.style.overflow = '';
   }, [isOpen]);
@@ -209,7 +210,6 @@ function Astronaut({ introContent, onContactClick }) {
 
 function ThemeSwitcher({ currentTheme, themes, onThemeSelect }) {
   const [open, setOpen] = useState(false);
-
   return (
     <div
       className="theme-switcher"
@@ -247,9 +247,23 @@ function ThemeSwitcher({ currentTheme, themes, onThemeSelect }) {
 }
 
 export default function GalaxyTheme() {
+  const [loading, setLoading] = useState(true);
+  const [takingOff, setTakingOff] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const [modalSection, setModalSection] = useState(null);
   const [currentTheme] = useState('Galaxy');
+
+  useEffect(() => {
+    // Show loader for 1.5-2 s, then trigger takeoff animation
+    const timer1 = setTimeout(() => setTakingOff(true), 1800);
+    // Hide loader after takeoff animation completes (e.g. 900 ms later)
+    const timer2 = setTimeout(() => setLoading(false), 2700);
+
+    return () => {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+      };
+  }, []);
 
   const onThemeSelect = (themeName) => {
     alert(`Theme switch to ${themeName} - implement routing or dynamic import for real app.`);
@@ -338,13 +352,24 @@ export default function GalaxyTheme() {
     { key: 'stats', label: 'Stats', image: planet8Img, position: { top: '7%', left: '50%' }, rotationDuration: 75, modalKey: 'stats' },
   ];
 
+  if (loading) {
+  return (
+    <div className="loader-container">
+      <img
+        src={spaceshipImg}
+        alt="Spaceship loading"
+        className={`loader-spaceship${takingOff ? " takeoff" : ""}`}
+      />
+    </div>
+  );
+}
+
   return (
     <div className="galaxy-theme-container">
       {/* Nebula/star background image */}
       <div className="nebula-bg-layer">
         <img src={nebulaBg} alt="Nebula starfield" />
       </div>
-
       <StarfieldBackground />
 
       {/* UI Content */}
