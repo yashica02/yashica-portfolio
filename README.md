@@ -1,30 +1,47 @@
-# Getting Started with Create React App
+# Yashica Sharma — Developer Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React portfolio presenting my software engineering experience, projects, skills, and contact information through a custom interactive interface.
 
-## Available Scripts
+## Purpose
 
-In the project directory, you can run:
+The portfolio is designed to give hiring managers a faster view of:
 
-### `npm start`
+- The problems I have worked on
+- My role and contribution to each project
+- The technologies I use
+- Measurable engineering outcomes
+- Links to source code and professional profiles
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technology
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- React
+- JavaScript
+- HTML and CSS
+- Create React App
 
-### `npm test`
+## Run locally
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+npm install
+npm start
+```
 
-### `npm run build`
+Create a production build with:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm run build
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Repository notes
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This portfolio uses custom visual assets, which makes the repository larger than a typical React project. Before future deployment, the assets should be reviewed for compression and unnecessary duplicates.
+
+## Planned improvements
+
+- Add the latest 2026 experience and awards
+- Improve mobile and keyboard navigation
+- Optimize large images and animations
+- Replace remaining boilerplate metadata
+- Add performance and accessibility checks
+- Add project case studies with clear individual contributions
+- Add automated deployment through GitHub Actions
